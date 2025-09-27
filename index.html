@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="en-AU">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The L&D Feedback Loop</title>
+    <style>
+        /* --- Brand Colours --- */
+        :root {
+            --brand-red: #ED0000;
+            --brand-black: #000000;
+            --brand-white: #FFFFFF;
+            --grey-2: #F5F5F5; /* Lightest Grey */
+            --grey-3: #E6E6E6; /* Light Grey */
+            --grey-4: #B3B3B3; /* Medium Grey */
+            --grey-5: #4D4D4D; /* Dark Grey */
+        }
+
+        /* --- General Styles --- */
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            background-color: var(--grey-2);
+            color: var(--grey-5);
+            margin: 0;
+            padding: 20px;
+            display: flex;
+            justify-content: center;
+            align-items: flex-start;
+            min-height: 100vh;
+            box-sizing: border-box;
+            font-size: 17px; /* Larger base font size for readability */
+        }
+
+        .container {
+            width: 100%;
+            max-width: 1100px; /* Made the container larger */
+            background: var(--brand-white);
+            padding: 30px;
+            border-radius: 12px;
+            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
+        }
+
+        h1 {
+            color: var(--brand-red);
+            text-align: center;
+            border-bottom: 3px solid var(--grey-3);
+            padding-bottom: 15px;
+            margin-top: 0;
+            margin-bottom: 20px;
+        }
+        
+        .intro-text {
+            text-align: center;
+            margin-bottom: 30px;
+            font-size: 1.1em;
+            line-height: 1.6;
+            color: #555;
+        }
+
+        /* --- Tabs Interactive Styles --- */
+        .tabs-container {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .tab-nav {
+            display: flex;
+            flex-wrap: wrap;
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            border-bottom: 2px solid var(--grey-3);
+            gap: 5px;
+        }
+
+        .tab-nav-item {
+            padding: 12px 20px;
+            cursor: pointer;
+            border: 2px solid transparent;
+            border-bottom: none;
+            border-radius: 8px 8px 0 0;
+            margin-bottom: -2px;
+            font-weight: 600;
+            color: var(--brand-black);
+            background-color: var(--grey-2);
+            transition: all 0.3s ease;
+        }
+
+        .tab-nav-item:hover {
+            background-color: var(--grey-3);
+        }
+
+        .tab-nav-item.active {
+            background-color: var(--brand-white);
+            border-color: var(--grey-3);
+            color: var(--brand-red);
+            border-bottom-color: var(--brand-white);
+        }
+
+        .tab-content {
+            padding: 25px;
+            border: 2px solid var(--grey-3);
+            border-top: none;
+            border-radius: 0 0 8px 8px;
+        }
+
+        .tab-pane {
+            display: none;
+            animation: fadeIn 0.5s;
+        }
+
+        .tab-pane.active {
+            display: block;
+        }
+        
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        .tab-pane h3 {
+            color: var(--brand-black);
+            margin-top: 0;
+        }
+
+        .tab-pane p, .tab-pane li {
+            line-height: 1.7;
+        }
+
+        .tab-pane ul {
+            list-style-type: '→ ';
+            padding-left: 20px;
+        }
+
+        .conclusion {
+            margin-top: 30px;
+            padding: 20px;
+            background-color: #fdf5f5; /* Light red background */
+            border-left: 5px solid var(--brand-red);
+            border-radius: 4px;
+        }
+        .conclusion p {
+            margin: 0;
+            line-height: 1.6;
+            font-weight: 500;
+        }
+
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <h1>The L&D Feedback Loop</h1>
+        <p class="intro-text">
+            Actively gathering feedback and evaluating performance are crucial for employee growth and organisational success. Explore the processes below that turn learning experiences into valuable assets for continuous development.
+        </p>
+        
+        <div class="tabs-container">
+            <ul class="tab-nav">
+                <li class="tab-nav-item active" data-tab="tab1">Knowledge Management</li>
+                <li class="tab-nav-item" data-tab="tab2">Key Learnings</li>
+                <li class="tab-nav-item" data-tab="tab3">Technology & Methodology</li>
+                <li class="tab-nav-item" data-tab="tab4">Organisational Alignment</li>
+                <li class="tab-nav-item" data-tab="tab5">Future Improvements</li>
+            </ul>
+
+            <div class="tab-content">
+                <div id="tab1" class="tab-pane active">
+                    <h3>What is Knowledge Management?</h3>
+                    <p>This is the systematic process of capturing, sharing, and using the insights gained from an L&D programme. It's about creating an organisational memory to ensure that valuable lessons from successes and challenges aren't lost, but are used to inform future strategy and design.</p>
+                </div>
+                <div id="tab2" class="tab-pane">
+                    <h3>Distilling Key Learnings</h3>
+                    <p>This step involves analysing the outcomes of a learning programme to identify the most critical takeaways. It answers the question: "What did we discover?"</p>
+                    <ul>
+                        <li><b>Learner Feedback:</b> What did participants find most and least effective?</li>
+                        <li><b>Performance Data:</b> Were there measurable improvements in skills or behaviours post-training?</li>
+                        <li><b>Unexpected Outcomes:</b> Were there any positive or negative results that we didn't anticipate?</li>
+                    </ul>
+                </div>
+                <div id="tab3" class="tab-pane">
+                    <h3>Technology & Methodology Improvements</h3>
+                    <p>Reflection on a programme should directly influence how future training is designed and delivered. This means constantly refining the tools and processes used to create effective learning experiences.</p>
+                    <ul>
+                        <li><b>Technology:</b> Was the LMS or virtual classroom platform effective? Could a new tool improve engagement?</li>
+                        <li><b>Methodology:</b> Did the instructional design approach work? Could a blended or social learning model be better?</li>
+                    </ul>
+                </div>
+                <div id="tab4" class="tab-pane">
+                    <h3>Alignment with Organisational Goals</h3>
+                    <p>A crucial part of reflection is assessing how well the learning programme supported the wider goals of the business. This ensures that L&D is not just a cost centre, but a strategic partner in driving success.</p>
+                     <ul>
+                        <li><b>Strategic Fit:</b> Did the programme address a key business need or skill gap?</li>
+                        <li><b>Impact on KPIs:</b> Can we draw a line between the training and improvements in key business metrics?</li>
+                    </ul>
+                </div>
+                <div id="tab5" class="tab-pane">
+                    <h3>Improving Future Training</h3>
+                    <p>This is where reflection turns into action. The insights gathered from the previous steps are used to create a clear plan for enhancing the quality and impact of future L&D initiatives.</p>
+                    <ul>
+                        <li><b>Content Updates:</b> Refining modules based on feedback and performance data.</li>
+                        <li><b>Process Changes:</b> Streamlining registration, communication, or follow-up procedures.</li>
+                        <li><b>New Initiatives:</b> Identifying needs for new programmes that emerged during the reflection process.</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="conclusion">
+            <p><strong>The Ultimate Benefit:</strong> By actively evaluating and iterating on the L&D offering, organisations can boost employee engagement, improve performance, increase retention, and build an agile workforce ready for future challenges.</p>
+        </div>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const tabs = document.querySelectorAll('.tab-nav-item');
+            const tabPanes = document.querySelectorAll('.tab-pane');
+
+            tabs.forEach(tab => {
+                tab.addEventListener('click', () => {
+                    const target = document.getElementById(tab.dataset.tab);
+
+                    tabs.forEach(t => t.classList.remove('active'));
+                    tab.classList.add('active');
+
+                    tabPanes.forEach(pane => {
+                        pane.classList.remove('active');
+                    });
+                    target.classList.add('active');
+                });
+            });
+        });
+    </script>
+</body>
+</html>
+
+
+
